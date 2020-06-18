@@ -13,6 +13,7 @@ services:
       MYSQL_DATABASE: local_database
     volumes:
       - dbdata:/var/lib/mysql
+      - ./config:/etc/mysql/conf.d
     command: --local-infile=true
 
   local_test_db:
@@ -28,6 +29,7 @@ services:
       MYSQL_DATABASE: local_database
     volumes:
       - db_test_data:/var/lib/mysql
+      - ./config:/etc/mysql/conf.d
     command: --local-infile=true
 
 volumes:
